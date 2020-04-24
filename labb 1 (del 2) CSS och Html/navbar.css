@@ -1,0 +1,141 @@
+body {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+   
+}
+    /* Min Header */
+
+header {
+    background-color: rgb(0, 0, 0, .3); 
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .6); 
+    position: fixed; /* navbaren är nu fixerad på att alltid synas längst upp på hemsidan */
+    width: 100%;
+    z-index: 3; /* låter elementet att vara ovanför de andra */
+}
+header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; /* tar bort markeringen för elementen */
+    overflow: hidden;
+}
+header ul a {
+    display: block;
+    padding: 15px;
+    border-right: 1px solid #aaa;
+    text-decoration: none;
+}
+header ul a:hover {
+    background-color: rgb(0, 0, 0, .2);
+}
+header .logo {
+    float: left;
+    display: flex;
+    font-size: 2em;
+    padding: 15px 20px;
+    text-decoration: none;
+}
+header .menu {
+    /* Här tvingas menyn som ligger bredvid (titeln) att hoppa ner under, detta
+    för att logon är satt som "float:left" och allt som är bredvid tvingas 
+    lämna rum för detta element*/
+    clear: both;
+    
+    /* Utgångs punkt utifrån mobilversion är att inte se menyn direkt */
+    max-height: 0px;
+    transition: max-height .2s ease-out; /* aktiveras mha ".header .menu-btn:checked ~ .menu" */
+}
+
+
+    /* Nedan är bas kod för en hamburger meny med hjälp av 2 sudo element */
+
+header .menu-icon {
+    padding: 28px 20px;
+    position: relative; /* Möjligör absolut positionering innanför parent element */
+    float: right;
+    cursor: pointer;
+}
+header .menu-icon .nav-icon {
+    background: #fff;
+    display: block;
+    height: 2px;
+    width: 18px;
+    position: relative;
+    transition: background .2s ease-out;
+}
+header .menu-icon .nav-icon::before {
+    background: #fff;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2 ease-out;
+    top: 5px;
+} 
+header .menu-icon .nav-icon::after {
+    background: #fff;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2 ease-out;
+    top: -5px;
+} 
+
+
+    /* Knappen för menu ikonen */
+
+header .menu-btn {
+    display: none;
+}
+/* Checbox är blir ibockad och rekogniseras med hjälp av menyknappen då ett id 
+ligger för checbox med menyknappen snappar upp detta id med "for" */
+header .menu-btn:checked ~ .menu {
+    max-height: 240px; /* Max höjd för ul taggen (unorderd list) taggen =
+    vid klick av meny ikonen så resulterar detta i en 
+    effekt på sitt syskon .menu(ul) som då ska utvidga
+    sin höjd med 240px*/ 
+}
+
+/* Samma trick gäller här */
+header .menu-btn:checked ~ .menu-icon .nav-icon {
+    background: transparent;
+  }
+/* här */
+header .menu-btn:checked ~ .menu-icon .nav-icon:before {
+    transform: rotate(-45deg);
+    top:0;
+}
+/* och här */
+header .menu-btn:checked ~ .menu-icon .nav-icon:after {
+    transform: rotate(45deg);
+    top:0;
+}
+
+    /* Media Query som tillåter övergången mellan hamburger meny eller inte 
+        -> alltså behöver det inte finnas en meny knapp när man sitter på 
+           större skärmar än 590px */
+
+@media (min-width: 620px) {
+    header li {
+      float: left;
+    }
+    header li a {
+      padding: 20px 30px;
+    }
+    header .menu {
+      clear: none;
+      float: right;
+      max-height: none;
+    }
+    header .menu-icon {
+      display: none;
+    }
+}
+
+@media (min-width: 300px) {
+    Header .logo {
+        font-size: 1.5em;
+    }
+}

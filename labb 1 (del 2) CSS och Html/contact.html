@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+    
+    <div id="main-container">
+        <div id="main">
+
+                <!-- Navigation bar -->
+
+            <header>
+                <a href="#" class="logo">curriculum vitae</a>
+                <input class="menu-btn" type="checkbox" id="menu-btn" />
+                <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
+                    <ul class="menu">
+                        <li><a href="index.html" >HEM</a></li>
+                        <li><a href="about.html" >OM MIG</a></li>
+                        <li><a href="contact.html" >KONTAKT</a></li>
+                    </ul>
+            </header>
+
+                <!-- Kontakt formulär -->
+
+            <section>
+                <div class="contact-form-container">
+                    <h1>Sugen på en kopp kaffe?</h1>
+                    <div class="contact-form">
+                        <!-- action = inget mer än att sidan skicaks vidare till en icke relelvant hemsida -->
+                        <form action="https//:www.example.com" method="get">
+                            <div class="txtbox">
+                                <label for="name">Förnamn:* </label>
+                                <input type="text" id="name" name="namn: " placeholder="Skriv in ditt förnamn" required>
+                            </div>
+                            <div class="txtbox">
+                                <label for="lastname" >Efternamn: </label>
+                                <input id="lastname" name="lastname: " placeholder="Skriv in ditt efternamn">
+                            </div>
+                            <div class="txtbox">
+                                <label for="email" >E-post:* </label>
+                                <input type="email" id="email" name="email: " placeholder="skriv in din E-post" required aria-errormessage="hej">
+                            </div>
+                            <div class="txtbox">
+                                <label for="subject" >Ämne: </label>
+                                <input id="subject" name="subject: " placeholder="skriv in ditt ämne">
+                            </div>
+                            <div class="txtbox">
+                                <label for="textsent">message:* </label>
+                                <textarea name="user sent: " id="textsent" cols="30" rows="10" placeholder="..." required></textarea>
+                            </div>
+                            <input class="button" type="submit" value="submit"> 
+                        </form>
+                    </div>
+                    </div>   
+            </section>
+        </div>
+    </div>
+
+    <footer id="footer">
+        Created by Johannes Ryberg, all copy rights served 2020   
+    </footer>
+    
+    
+    
+</body>
+</html> 

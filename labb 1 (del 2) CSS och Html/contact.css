@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("images/HP-contact-background.jpg");
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    color: white;
+}
+
+    /* Ser till att färgen i navbar förblir vitt i sin text */
+
+header a {
+    color: white;
+}
+
+    /* Osynlig wrapper som möjligör kontroll över contact-form-container */
+
+section {
+    display: flex;
+    height: 100vh;
+}
+
+    /* elemntet som håller hela formuläret förutom */
+
+.contact-form-container {
+    background-image: linear-gradient(#7F0909 , #FFC500);
+    box-shadow: 1px 1px 30px 0 rgba(0, 0, 0, .7); 
+    width: 85%;
+    max-width: 600px;
+    padding: 30px 40px;
+    margin: 200px auto auto auto;
+    box-sizing: border-box;
+    text-align: center;
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 10px;
+}
+
+    /* Titel */
+
+.contact-form-container h1 {
+    font-weight: 200;
+    margin-bottom: 30px;
+}
+
+    /* här skriver man in sitt meddelande */
+
+.txtbox {
+    border: 1px solid grey;
+    margin: 10px 0px;
+    padding: 12px 18px;
+    border-radius: 8px;
+}
+
+    /* Gör ändringar formulärets alla labels */
+
+.txtbox label {
+    display: block; /* elemnten ska visas under varandra */
+    text-align: left;
+    color: #333;
+    text-transform: uppercase; /* a -> A  etc.. */
+    font-size: 13px;
+}
+
+    /* Gör ändringar i formulärets alla input + textarean */
+
+.txtbox input, .txtbox textarea {
+    width: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+    /* submit knappen */
+
+.button {
+    background-color: #421616;
+    width: 100%;
+    padding: 13px 0;
+    color: #DBDAD8;
+    font-size: 1rem;
+    text-transform: uppercase;
+}

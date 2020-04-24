@@ -1,0 +1,356 @@
+body {
+    width: 100%;
+}
+header a {
+    color: white;
+}
+.img-container {
+    background-image: url(images/index-header-background.jpg);
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, .3);
+    height: 800px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+}
+.inner-container {
+    margin: auto;
+    text-align: center; 
+    color: white;
+    padding: 10px;
+}
+.inner-container h1 {
+    font-size: 5em;
+}
+.inner-container h2 {
+    font-size: 2em;
+}
+
+    /* information om sidan elemntet */
+
+.titleforteaser {
+    height: 80px;
+    width: 350px;
+    margin: 100px auto 0px auto;
+    border-radius: 25px 25px 0px 0px;
+    background-color: rgb(52, 83, 94);
+    display: flex;  
+}
+.teasertitle {
+    color: white;
+    font-size: 3em;
+    margin: auto;
+}
+/* Wrapper for entire teaser element */
+.teaser {
+    height: 500px;
+    max-width: 700px;
+    margin: auto auto 150px auto;
+    background-color: lightblue;
+    border-radius: 35px 0px 35px 0px;
+    padding: 70px 50px;
+    display: flex;
+    
+}
+.teaser-img {
+    background-image: url(images/profilbild.jpg);
+    background-position: center;
+    background-size: cover;
+    box-shadow: 6px 6px 50px 0 rgba(0, 0, 0, .5); 
+    height: 100%;
+    flex: 1.5;
+    border-radius: 35px 0px 35px 0px;
+    order: 1; /* bilden ska ligga åt vänster och om jag
+     inte väljer order så kommer texten att ta dess plats 
+     då mer information finnns i text */
+}
+.teaser-paragraph {
+    order: 2;
+    flex: 2;
+    padding: 15px;
+    line-height: 1.6;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+}
+
+
+/* en wrapper som håller i hop flera box 
+   element och som bygger på samma spec via klassen "content" */
+.work-experience-container {
+    
+    background-color: rgb(150, 150, 150);
+    display: grid;
+    max-width: 1980px;
+    margin: 20px auto;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr) );
+    grid-auto-rows: 400px;
+    grid-gap: 30px;
+    padding: 40px;
+}
+.box {
+    height: 100%;
+    line-height: 1.5em;
+    padding: 20px;
+    box-shadow: 2px 2px 10px 0 inset rgba(50, 50, 50, 0.65);
+}
+.box p {
+    padding-top: 15px;
+}
+.box h2 {
+    margin-bottom: .5em;
+    font-size: 1.7em;
+}
+.box span {
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+
+
+
+.wrapper-for-education {
+    background-color: white;
+    height: 100%;
+}
+.wrapper-for-contactinfo-container {
+    background-color: white;
+    height: 40%;
+    max-width: 1960px;
+    display: flex;
+    margin: auto;
+}
+.tel {
+    flex: 1;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3rem;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 150px;
+}
+.infobox {
+    flex: 0.5;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.6em;
+    font-style: italic;
+    margin: auto;
+    text-align: center;
+    
+}
+.e-mail {
+    flex: 1;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 150px;
+}
+.icon {
+    background-color: green;
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    margin-top: 200px;
+}
+
+
+
+.tel p {
+    margin-top: 20px;
+}
+.e-mail p {
+    margin-top: 20px;
+}
+.wrapper-for-education-info-container {
+    background-color: white;
+    padding: 10px 100px;
+    max-width: 1760px;
+    line-height: 1.6em;
+    margin: auto;
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+} 
+.education1 {
+    background-color: rgb(0, 0, 0, 0.08);
+    box-shadow: 2px 2px 10px 0 rgba(50, 50, 50, 0.65);
+    border-radius: 50px;
+    margin-bottom: 40px;
+    padding:30px;
+}
+.link-to-ITHS {
+    color: black;
+    font-weight: bold;
+}
+.education2 {
+    background-color: rgb(0, 0, 0, 0.08);
+    box-shadow: 2px 2px 10px 0 rgba(50, 50, 50, 0.65);
+    border-radius: 50px;
+    margin-bottom: 40px;
+    padding:30px;
+}
+.link-to-fastighetsakademin {
+    color: black;
+    font-weight: bold;
+}
+.education3 {
+    background-color: rgb(0, 0, 0, 0.08);
+    box-shadow: 2px 2px 10px 0 rgba(50, 50, 50, 0.65);
+    border-radius: 50px;
+    margin-bottom:150px;
+    padding:30px;
+}
+.link-to-aranäsgymnasiet {
+    color: black;
+    font-weight: bold;
+}
+.date {
+    font-style: italic;
+    font-weight: normal;
+    padding: 1rem;
+}
+
+/* dator anpassning för att få två boxar berdvid varandra*/
+@media (min-width: 1153px){
+    .box {
+        flex-basis: 42%; /* samma som width i princip */
+    }
+}
+        
+
+@media (max-width: 1152px){    
+
+    /* kontakt uppgifter sektion -> innan information om skolorna */
+
+.wrapper-for-contactinfo-container {
+    flex-direction: column;
+    padding: 10px;
+}
+.tel {
+    order: 1;
+    margin-bottom: 30px;
+    font-size: 1.4em;
+}
+.tel p {
+    margin-top: 10px;
+}
+.infobox {
+    order: 3;
+    padding: 5%;
+    font-size: 1.5em;
+}
+.e-mail{
+    order: 2;
+    margin-bottom: 10px;
+}
+.e-mail p {
+    margin-top: 10px;
+}
+.icon {
+    height: 70px;
+    width: 70px;
+    margin-top: 20px;
+}
+
+
+@media (max-width: 830px) {
+    
+    /* justering för teaser */
+    .teaser {
+        margin: auto 30px 70px 30px;
+        
+        padding: 40px 40px;
+        flex-direction: column;
+    }
+    .teaser-img {
+        width: 100%;
+        margin-bottom: 30px;
+        flex: 2;
+    }
+    .teaser-paragraph {
+        font-size: 1em;
+    }
+    .teaser-paragraph {
+        font-size: 1.2em;
+        flex: 1;
+        line-height: 1em;
+    }
+
+        /* text framför header bild */
+
+    .inner-container h1 {
+        font-size: 5em;
+    }
+    .inner-container h2 {
+        font-size: 2em;
+    }
+
+        /* kontakt uppgifter sektion -> innan information om skolorna */
+    
+    .infobox {
+        padding: 10%;
+    }
+        
+        /* ger mindre padding på sidorna för respektive skol boxar */
+
+    .wrapper-for-education-info-container {
+        padding: 10px 20px; 
+    }
+}
+
+/* mobil anpassning under 504px -> Blackberry Passport tar denna platsen enligt mydevice.io */
+@media (max-width: 504px){
+        
+        /* Minskar höjden på header bild och justerar */
+    
+    .img-container {
+        height: 600px;
+    }
+    .inner-container h1 {
+        font-size: 3em;
+    }
+    .inner-container h2 {
+        font-size: 1em;
+    }
+
+        /* Teaser */
+
+    .titleforteaser {
+        align-items: center; 
+        width: 100%;
+        height: 60px;
+        border-radius: 0px 0px 0px 0px;
+        box-shadow: 2px -6px 10px 0 rgba(0, 0, 0, .3); 
+    }
+    .teasertitle {
+        font-size: 2em;
+    }
+    .teaser {
+        border-radius: 0px 0px 0px 0px;
+        align-items: flex-end;
+        padding: 30px 30px;
+        margin: auto auto 70px auto;
+        box-shadow: 0 8px 10px 0 rgba(0, 0, 0, .3);
+    }
+    .teaser-img {
+        flex: 1;
+        border-radius: 0px 0px 0px 0px;
+    }
+    .teaser-paragraph {
+        font-size: 1em;
+        flex: 1;
+        line-height: 1em;
+    }
+    
+        /* kontakt uppgifter sektion -> innan information om skolorna */
+
+    .infobox {
+        padding: 10%;
+    }
+
+        /* ger mindre padding på sidorna för respektive skol boxar */
+
+    .wrapper-for-education-info-container {
+        padding: 10px 10px; 
+    }
+}
+}

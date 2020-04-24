@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Avancera/cities -->
+
+    <div class="theBigWrapperGuy">
+        <div class="titleWrapper">
+            <h1><strong>Avancera / Cities</strong></h1>
+        </div>
+
+        <div class="textField">
+            <p><strong>Name: </strong> (works with add and change) </p>
+            <input id="txtName" placeholder="Skriv in valfri stad">
+            <p><strong>Population: </strong> (works with add and change) </p>
+            <input id="txtPopulation" placeholder="Skriv in valfri population">
+            <p><strong>Id: </strong> (works with change and id) </p>
+            <input id="txtIdentification" placeholder="Skriv in id här!">
+        </div>
+        
+            
+        <div class="btnWrapper">
+            <div class="btnHolder">
+                <input type="button" value="update/show the object" id="showBtn">
+                <input type="button" value="add" id="addBtn">
+                <input type="button" value="change" id="changeBtn">
+                <input type="button" value="delete" id="deleteBtn">
+            </div>
+        </div>
+        <fieldset id="fetchInfo">
+            <p id="objectRepresantation">text here</p>
+        </fieldset>
+    
+        <div class="titleWrapper">
+            <h1><strong>Poke API</strong></h1>
+        </div>
+        
+        <!-- Poke API -->
+
+        <div class="btnWrapper">
+            <div class="btnHolder">
+                <input type="button" value="Generate a random pokemon in Kanto region" id="generateAnPokemon">
+            </div>
+        </div>
+
+        <ol id="wrapperForPokemonInfo">       
+            
+            <h2>Here is a pokemon ...</h2>
+            
+            <p id="name"></p>
+            <div id="pic-wrapper">
+            </div>
+            <p id="abilties"></p>
+            <p id="pokId"></p>
+            <p id="base-experience"></p>
+            <p id="type"></p>
+            <p id="weight"></p>
+        
+        </ol>
+    </div>
+
+    <script src="index.js"></script>
+
+</body>
+</html>
