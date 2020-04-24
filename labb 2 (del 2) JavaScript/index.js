@@ -16,11 +16,8 @@ function fetchCities() {
     },
     }). then(response => response.json()). then(result => { 
 
-    let result_string = JSON.stringify(result, null," ")
-    localStorage.setItem('cities', result_string)
-    console.log(result_string)
-
-    objRep.textContent = localStorage.getItem('cities')
+        let result_string = JSON.stringify(result, null," ")
+        objRep.textContent = result_string
     })
 }
 
@@ -49,10 +46,7 @@ addBtn.addEventListener('click', () => {
         }). then(response => response.json()). then(result => { 
 
             let result_string = JSON.stringify(result, null," ")
-            localStorage.setItem('cities', result_string)
-            console.log(result_string)
-        
-            objRep.textContent = localStorage.getItem('cities')
+            objRep.textContent = result_string
 
             console.log('input: ' + addName)
             console.log('input: ' + addPopulation)
@@ -87,10 +81,7 @@ changeBtn.addEventListener('click', () => {
         }). then(response => response.json()). then(result => { 
 
             let result_string = JSON.stringify(result, null," ")
-            localStorage.setItem('cities', result_string)
-            console.log(result_string)
-        
-            objRep.textContent = localStorage.getItem('cities')
+            objRep.textContent = result_string
 
             console.log('input: ' + changeName)
             console.log('input: ' + changePopulation)
@@ -110,7 +101,7 @@ deleteBtn.addEventListener('click', () => {
 
     let deleteIdentification = document.querySelector('#txtIdentification').value
     let link = 'https://avancera.app/cities/'+ deleteIdentification
-
+    
     if (deleteIdentification.length == 0) {
        alert('you forgot to type in the id')
     } else {
@@ -118,6 +109,7 @@ deleteBtn.addEventListener('click', () => {
             method: 'DELETE'})
             .then((data) => {
                 console.log('Success:', data);
+                
             })
             .catch((error) => {
             console.error('Error:', error);
@@ -125,7 +117,7 @@ deleteBtn.addEventListener('click', () => {
     }
 })
 
-
+// användaren kan nu se sitt sista borttagna element
 /*
 ---------------------------------------------------------------
 Generate a Pokemon 
@@ -165,7 +157,6 @@ const fetchPokemon = () => {
             image_default: result.sprites['front_default'],
             image_shiny: result.sprites['front_shiny'], 
             name: result.name,
-            //abilities: result.attributes,
             id: result.id,
             weight: result.weight,
             base_experience: result.base_experience,
@@ -173,11 +164,23 @@ const fetchPokemon = () => {
             type: result.types.map((type) => type.type.name).join(', ')
         } 
         displayPokemon(pokemonAttr)
+
+        localStorage.setItem('pokNameSaved', result.name)
+        showPokText.textContent = 'next time you refresh the browser you will se last registerd pokemon :)'
     })
 }
 
+    // Min impletering av en användarvänlig webstorage hantering
+    let showPokText = document.querySelector('#showLastPokemon')
+    if(!localStorage.getItem('pokNameSaved')) {
+        showPokText.textContent = "It seems like you haven't generated a pokemon yet"
+        } else {
+            let lastSeenPokSaved = localStorage.getItem('pokNameSaved')
+            showPokText.innerHTML = '<strong>last seen pokemon since last time you where on this page was: </strong>' + lastSeenPokSaved
+    }
+
 /* 
-    Display a pokemon function -> OBS har valt att inte skapa HTML i javascript utan bara refererat till elementen för att att slippa återskapa ett nytt objekt av diverse pokemon under varandra. Utan min avsikt är att bara uppdatera informationen på hemsidan.
+    Display a pokemon function -> OBS har valt att inte skapa HTML i javascript utan bara refererat till elementen för att att slippa återskapa ett nytt objekt av diverse pokemon under varandra. Utan min avsikt är att bara uppdatera informationen på hemsidan. 
 */
 let showPokemon = document.getElementById('wrapperForPokemonInfo')
 
@@ -191,9 +194,6 @@ const displayPokemon = (pokemonAttr) => {
     // name
     let name = document.querySelector('#name')
     name.innerHTML = '<strong>Name: </strong>' + pokemonAttr.name
-    
-    //let abilties = document.querySelector('#abilties')
-    //abilties.innerHTML = '<strong>Abilties: </strong>' + pokemonAttr.abilties
     
     // pokemon id i pokeindex
     let pokId = document.querySelector('#pokId')
